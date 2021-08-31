@@ -1,0 +1,26 @@
+version: '3'
+services:
+  phone-book-db:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+
+  phone-book-app:
+    depends_on:
+      - phone-book-db
+    build: .
+    environment:
+      DB_USER: root
+      DB_PASS: 1234
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_SCHEMA: phone-book
+
+    ports:
+      - 9000:9000

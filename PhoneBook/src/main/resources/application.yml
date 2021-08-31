@@ -1,0 +1,35 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: PhoneBook Challenge
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format-sql: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${phonebook_db_username}
+    password: ${phonebook_db_password}
+    url: jdbc:mysql://${phonebook_db_host}:${phonebook_db_port}/${phonebook_db_schema}
+
+logging:
+  path: logs
+  level:
+    org.springframework: INFO
+    org.springframework.web: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    org.hibernate: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
