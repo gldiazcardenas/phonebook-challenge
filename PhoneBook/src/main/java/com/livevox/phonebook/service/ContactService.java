@@ -4,6 +4,9 @@ import com.livevox.phonebook.model.ContactEntity;
 import com.livevox.phonebook.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 @Service
 public class ContactService {
@@ -15,8 +18,16 @@ public class ContactService {
         return contactRepository.findAll();
     }
 
-    public void save(ContactEntity contact) {
+    public Iterable<ContactEntity> filter(String q) {
+        if (!StringUtils.hasText(q)) {
+            return findAll();
+        }
+        return contactRepository.findByFirstNameContainingOrLastNameContainingOrPhoneContaining(q, q, q);
+    }
 
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void save(ContactEntity contact) {
+        contactRepository.save(contact);
     }
 
 }
