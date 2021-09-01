@@ -27,8 +27,8 @@ logging:
   path: logs
   level:
     org.springframework: INFO
-    org.springframework.web: DEBUG
+    org.springframework.web: INFO
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
-    org.hibernate: DEBUG
+    org.hibernate: INFO
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
