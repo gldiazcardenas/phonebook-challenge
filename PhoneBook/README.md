@@ -53,7 +53,7 @@ And let the magic happen.
 
 Considered as 3-tier architecture, being composed by: 1. Presentation tier + 2. Application tier + 3. Data tier.
 
-![Architecture](https://github.com/gldiazcardenas/phonebook-challenge/tree/master/PhoneBook/diagram/architecture.png)
+![Architecture](./diagram/architecture.png)
 
 
 ### Application layers ###
