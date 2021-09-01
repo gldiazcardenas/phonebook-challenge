@@ -51,14 +51,20 @@ And let the magic happen.
 
 ### Architecture Definition ###
 
-Considered as 3-tier architecture, being composed by: 1. Web tier + 2. Application tier + 3. DB tier.
+Considered as 3-tier architecture, being composed by: 1. Presentation tier + 2. Application tier + 3. Data tier.
 
 ![Architecture](https://github.com/gldiazcardenas/phonebook-challenge/tree/master/PhoneBook/diagram/architecture.png)
 
 
 ### Application layers ###
 
+At the same time, the application was splitted into multiple logical layer organized by packages inside the source
+code: 
 
+1. Controller Layer: Contains the methods that act as interceptor of client requests.
+2. Service Layer: Contains the business logic.
+3. Model Layer: Contains the classes representing the business concepts.
+4. Repository Layer: Contains classes that allow to access persistent data.
 
 
 
