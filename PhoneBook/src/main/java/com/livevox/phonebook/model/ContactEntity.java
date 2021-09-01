@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -15,15 +14,12 @@ public class ContactEntity {
     private long id;
 
     @NotBlank
-    @Min(5)
     private String firstName;
 
     @NotBlank
-    @Min(5)
     private String lastName;
 
     @NotBlank
-    @Min(5)
     private String phone;
 
     public long getId() {

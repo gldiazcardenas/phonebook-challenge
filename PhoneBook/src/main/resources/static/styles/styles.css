@@ -85,3 +85,7 @@ body {
 .fa {
 	padding-right:10px;
 }
+
+.error {
+    color: red;
+}

@@ -21,16 +21,16 @@
         <div class="pure-u-sm-1 pure-u-1-2">
             <div class="box">
                 <h2><i class="fa fa-user-plus"></i>New contact</h2>
-                <form class="pure-form" action="#" th:action="@{/add-contact}" th:object="${contact}" method="post">
+                <form class="pure-form" action="#" th:action="@{/add-contact}" th:object="${contactEntity}" method="post">
                     <fieldset class="pure-group">
                         <input type="text" class="pure-input-1-2" th:field="*{firstName}" id="firstName" placeholder="First Name">
-                        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Invalid first name</span>
+                        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"></span>
 
                         <input type="text" class="pure-input-1-2" th:field="*{lastName}" id="lastName" placeholder="Last Name">
-                        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Invalid last name</span>
+                        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
 
                         <input type="text" class="pure-input-1-2" th:field="*{phone}" id="phone" placeholder="Phone">
-                        <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Invalid phone</span>
+                        <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="error"></span>
                     </fieldset>
                     <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">
                         <i class="fa fa-user-plus"></i>Add

@@ -30,4 +30,8 @@ public class ContactService {
         contactRepository.save(contact);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void delete(Long id) {
+        contactRepository.deleteById(id);
+    }
 }
